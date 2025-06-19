@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Church Website Template - Next.js
 
-## Getting Started
+A modern, responsive church website template built with Next.js. This template provides a foundation for building church websites with essential features like sermon archives, live streaming, event management, and online giving capabilities.
 
-First, run the development server:
+## Features Template
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Modern Tech Stack**: Built with Next.js 15.3.4, React 19, TypeScript, and TailwindCSS
+- **Responsive Design**: Mobile-first approach for all device sizes
+- **Performance Optimized**: Built with web vitality metrics in mind
+- **SEO Ready**: Structured for optimal search engine visibility
+- **Accessibility**: WCAG compliance built-in
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pre-built Pages & Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🏠 **Home Page Template**
+  - Hero section
+  - Featured events carousel
+  - Latest sermons grid
+  - Newsletter signup
+  
+- 📺 **Sermons & Media**
+  - Video/audio player integration
+  - Sermon series archival system
+  - Notes PDF attachment support
+  
+- 📅 **Events System**
+  - Calendar integration ready
+  - Event registration system
+  - Recurring events support
+  
+- 🙏 **Ministry Pages**
+  - Ministry showcase template
+  - Team member cards
+  - Contact forms
+  
+- 💰 **Online Giving**
+  - Payment gateway integration ready
+  - Recurring giving setup
+  - Campaign support
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- Frontend: Next.js 15.3.4
+- UI Library: React 19.0.0
+- Styling: TailwindCSS
+- Language: TypeScript
+- Package Manager: npm
 
-To learn more about Next.js, take a look at the following resources:
+## Quick Start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone and install:
