@@ -23,24 +23,26 @@ export default function SermonCard({
     const youtubeThumbnail = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
 
     return (
-        <div className="bg-[#111111] h-40 w-75 border-none rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-[#333333] group">
+        <div className="bg-[#111111] lg:h-60 lg:w-105 border-none rounded-4xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-[#333333] group">
             {/* Thumbnail with Black Overlay */}
-            <div className="relative aspect-video">
+            <div className="relative h-full aspect-video bg-black">
                 {/* Image with Overlay */}
-                <div className="absolute inset-0">
+                <div className="absolute h-full inset-0 bg-black">
                     <Image
                         src={youtubeThumbnail}
                         alt={title}
                         fill
-                        className="object-cover"
+                        className="object-cover bg-black"
                     />
                     {/* Black Overlay (50% opacity) */}
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all" />
+                    <div className="absolute inset-0 rounded-3xl bg-black/50 group-hover:bg-black/40 transition-all" />
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-[black]/80 to-transparent group-hover:from-black/70 transition-all">
+                    </div>
                 </div>
 
                 {/* Play Button (Always Visible) */}
                 <button
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0 bg-transparent flex items-center justify-center"
                     onClick={() => window.open(`https://www.youtube.com/watch?v=${youtubeId}`, '_blank')}
                     aria-label={`Play ${title}`}
                 >
@@ -60,6 +62,7 @@ export default function SermonCard({
                     </div>
                 </button>
             </div>
+
 
             {/* Sermon Details (Unchanged) */}
           {/*  <div className="p-4">*/}

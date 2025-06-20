@@ -6,12 +6,12 @@ export function Header(){
     const linkStyle = "hover:border border border-black hover:border-white px-5 py-1.5 rounded-3xl transition-colors duration-300"
 
     return(
-        <header className="flex text-white w-full px-15 py-5 items-center justify-between h-[10%]">
+        <header className="flex text-white w-full px-[15%] py-5 items-center justify-between h-[10%]">
             <h2 className="font-black text-3xl tracking-tighter">OSM</h2>
             <nav className="flex gap-5  tracking-wide font-light items-center">
                 <Link href="#" className={linkStyle}>About Us</Link>
                 <Link href="#" className={linkStyle}>Live</Link>
-                <Link href="#" className={linkStyle}>Events</Link>
+                <Link href="#" className={linkStyle}>Announcements</Link>
                 <Link href="#" className={linkStyle}>Sermons</Link>
                 <Link href="#" className={linkStyle}>Resources</Link>
                 <Link
