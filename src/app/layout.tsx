@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist} from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import {Header} from "@/components/pages/home/header";
+import {Hero} from "@/components/pages/home/hero";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +26,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} bg-black antialiased`}
       >
-        {children}
+          <section className="relative w-full min-h-screen flex-col flex z-20 transition-all duration-500 ease-in-out">
+
+              <div
+                  className="absolute inset-0 bg-[url('/paper-texture.jpg')] bg-repeat opacity-10 mix-blend-multiply pointer-events-none z-40"
+              />
+              <div className="absolute inset-0 w-full h-screen">
+                  <Image
+                      src="/prophet-wallpaper.png"
+                      alt="hero"
+                      fill
+                      className="object-cover transition-transform duration-500 ease-in-out z-0" priority />
+                  <div className="absolute inset-0 bg-black/50 z-10 transition-opacity duration-500 ease-in-out"/>
+              </div>
+
+              <section className="relative z-20 w-full h-screen flex-col flex">
+                  <Header />
+                  {children}
+              </section>
+          </section>
       </body>
     </html>
   );
