@@ -12,13 +12,8 @@ interface SermonCardProps {
 }
 
 export default function SermonCard({
-                                       id,
                                        title,
-                                       preacher,
-                                       date,
                                        youtubeId,
-                                       duration,
-                                       series,
                                    }: SermonCardProps) {
     const youtubeThumbnail = `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
 
