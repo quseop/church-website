@@ -13,7 +13,7 @@ export function Header(){
                 <Link href="#" className={linkStyle}>Live</Link>
                 <Link href="/announcements" className={linkStyle}>Announcements</Link>
                 <Link href="#" className={linkStyle}>Sermons</Link>
-                <Link href="#" className={linkStyle}>Resources</Link>
+                <Link href="/resources" className={linkStyle}>Resources</Link>
                 <Link
                     href="#"
                     className="bg-white text-sm font-medium flex hover:font-bold items-center gap-2 hover:gap-2.5 text-[#333]  rounded-3xl px-5  hover:py-3 py-2 transition-all duration-300">
