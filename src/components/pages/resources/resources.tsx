@@ -12,7 +12,7 @@ export function Resources() {
             title: "Study Guides",
             description: "Download guides to help you dive deeper into the Word.",
             icon: <BookOpen className="w-6 h-6" />,
-            link: "/resources/study-guides",
+            link: "/resources/guides",
         },
         {
             title: "Prayer Requests",
