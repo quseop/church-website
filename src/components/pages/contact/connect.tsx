@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function Connect() {
     return (
-        <main className="min-h-screen w-full px-[15%] py-20 text-[#ddd]">
+        <main className="min-h-screen w-full max-sm:px-[5%] px-[15%] py-20 text-[#ddd]">
             <h1 className="text-3xl font-light tracking-widest mb-6">Connect With Us</h1>
             <p className="text-sm text-gray-400 mb-12 w-[60%]">
                 Whether you have a question, a prayer request, or just want to get in touch, we’d love to hear from you.
@@ -31,7 +31,7 @@ export default function Connect() {
                         <MapPin className="w-5 h-5 mt-1 text-[#6D2E47]" />
                         <div>
                             <h3 className="text-base font-light">Location</h3>
-                            <p className="text-sm text-gray-400">Pretoria, Brooklyn, South Africa</p>
+                            <p className="text-sm text-gray-400">Brooklyn, Pretoria, South Africa</p>
                         </div>
                     </div>
                 </div>
