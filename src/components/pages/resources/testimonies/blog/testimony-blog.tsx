@@ -28,8 +28,8 @@ const testimonies = [
     },
 ];
 
-export default function TestimonyBlog({ params }: { params: { slug: string } }) {
-    const post = testimonies.find((t) => t.slug === params.slug);
+export function TestimonyBlog({ slug }: {slug: string}) {
+    const post = testimonies.find((t) => t.slug === slug);
     if (!post) return notFound();
 
     return (
@@ -53,12 +53,12 @@ export default function TestimonyBlog({ params }: { params: { slug: string } }) 
             </article>
 
             <div className="pt-12">
-                <a
+                <Link
                     href="/resources/testimonies"
                     className="underline text-[#6D2E47] hover:text-[#8d3b61] text-sm"
                 >
                     ← Back to Testimonies
-                </a>
+                </Link>
             </div>
         </main>
     );

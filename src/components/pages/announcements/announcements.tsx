@@ -9,7 +9,7 @@ export function Announcements(){
             icon: <Calendar className="w-5 h-5" />,
         },
         {
-            title: "Prayer Service",
+            title: "Prayer Meeting",
             date: "Every Wednesday @7:00pm",
             icon: <BookOpen className="w-5 h-5" />,
         },

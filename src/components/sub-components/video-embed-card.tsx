@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from "next/image";
 
 interface VideoEmbedCardProps {
     youtubeId: string;
@@ -27,7 +28,7 @@ export default function VideoEmbedCard({
                 {!isPlaying ? (
                     <>
                         {/* Thumbnail with Play Button */}
-                        <img
+                        <Image
                             src={`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`}
                             alt={title}
                             className="w-full h-full object-cover"

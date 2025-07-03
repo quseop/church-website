@@ -1,7 +1,14 @@
-import TestimonyBlog from "@/components/pages/resources/testimonies/blog/testimony-blog";
+import {TestimonyBlog} from "@/components/pages/resources/testimonies/blog/testimony-blog";
 
-export default function TestimonyPage({ params }: { params: { slug: string } }) {
+// import { type Metadata } from "next";
+
+type Props = {
+    params: Promise<{ slug: string }>
+}
+
+export default async function TestimonyPage({ params }: Props) {
+    const { slug } = await params;
     return (
-        <TestimonyBlog params={params} />
+        <TestimonyBlog slug={slug} />
     )
 }
