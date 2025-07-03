@@ -27,7 +27,7 @@ const guides: StudyGuide[] = [
 
 export function StudyGuides() {
     return (
-        <main className="relative flex flex-col h-screen w-full px-[15%] py-20 text-[#ddd]">
+        <main className="relative flex flex-col h-screen w-full max-sm:px-[5%] px-[15%] py-10 text-[#ddd]">
 
             <div className="pb-12">
                 <Link
@@ -39,7 +39,7 @@ export function StudyGuides() {
             </div>
 
             <h1 className="text-3xl font-light tracking-widest mb-6">Study Guides</h1>
-            <p className="text-gray-400 text-sm mb-12 w-[60%]">
+            <p className="text-gray-400 text-sm mb-12 w-[60%] max-sm:w-[90%]">
                 These free resources are made available to help you grow in your walk with the Lord. Each guide is written with simplicity and scriptural clarity.
             </p>
 

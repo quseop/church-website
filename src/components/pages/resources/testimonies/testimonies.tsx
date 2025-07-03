@@ -28,7 +28,7 @@ const testimonies: Testimony[] = [
 
 export default function TestimoniesList() {
     return (
-        <main className=" px-[15%] py-20 text-[#ddd]">
+        <main className=" px-[15%] max-sm:px-[5%] py-10 text-[#ddd]">
 
             <div className="pb-12">
                 <Link
@@ -38,7 +38,7 @@ export default function TestimoniesList() {
                     <ArrowLeft size={45} className="border rounded-3xl p-2" />
                 </Link>
             </div>
-            
+
         <h1 className="text-3xl font-light tracking-widest mb-6">Testimonies</h1>
             <p className="text-sm text-gray-400 mb-12 w-[60%]">
                 “They overcame by the blood of the Lamb and by the word of their testimony.” — Revelation 12:11

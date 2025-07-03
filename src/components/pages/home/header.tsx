@@ -39,7 +39,7 @@ export function Header() {
 
             {/* Mobile nav */}
             {isOpen && (
-                <div className="absolute top-full left-0 w-full bg-black px-[15%]  py-6 flex flex-col gap-6 md:hidden">
+                <div className="absolute top-full left-0 w-full bg-black   py-6 flex flex-col gap-6 md:hidden">
                     <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>About Us</Link>
                     <Link href="/live" className={linkStyle} onClick={() => setIsOpen(false)}>Live</Link>
                     <Link href="/announcements" className={linkStyle} onClick={() => setIsOpen(false)}>Announcements</Link>
@@ -47,7 +47,7 @@ export function Header() {
                     <Link
                         href="/contact"
                         onClick={() => setIsOpen(false)}
-                        className="bg-white text-sm font-medium flex hover:font-bold items-center gap-2 hover:gap-2.5 text-[#333]  rounded-3xl px-5  hover:py-3 py-2 transition-all duration-300"
+                        className="bg-white max-sm:mx-[5%] text-sm font-medium flex hover:font-bold items-center gap-2 hover:gap-2.5 text-[#333]  rounded-3xl px-5  hover:py-3 py-2 transition-all duration-300"
                     >
                         CONNECT
                         <ArrowRight />

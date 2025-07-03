@@ -38,7 +38,7 @@ const links: LinkItem[] = [
 
 export function RecommendedLinks() {
     return (
-        <main className="h-screen overflow-hidden w-full px-[15%] py-20 text-[#ddd]">
+        <main className="h-screen overflow-hidden w-full px-[15%] py-10 text-[#ddd]">
             <div className="pb-12">
                 <Link
                     href="/resources"

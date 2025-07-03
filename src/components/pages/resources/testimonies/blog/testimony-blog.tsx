@@ -33,7 +33,7 @@ export function TestimonyBlog({ slug }: {slug: string}) {
     if (!post) return notFound();
 
     return (
-        <main className="h-screen px-[15%] py-20 text-[#ddd]">
+        <main className="h-screen px-[15%] max-sm:px-[5%] py-20 text-[#ddd]">
 
             <div className="pb-12">
                 <Link

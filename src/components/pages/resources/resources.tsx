@@ -41,7 +41,7 @@ export function Resources() {
     ];
 
     return (
-        <section className="relative w-full h-screen px-[15%] py-20 text-[#ddd]">
+        <section className="relative w-full h-screen max-sm:px-[5%] px-[15%] py-20 text-[#ddd]">
             <h2 className="text-3xl font-light tracking-widest mb-12">Resources</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

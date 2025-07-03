@@ -21,7 +21,7 @@ export function Announcements(){
     ];
 
     return(
-        <section className="relative flex flex-col items-start overflow-hidden justify-center w-full p-[15%] text-[#ddd]">
+        <section className="relative flex flex-col items-start overflow-hidden justify-center w-full max-sm:px-[5%] p-[15%] text-[#ddd]">
             <h2 className="text-3xl font-light tracking-widest">Announcements & Events</h2>
             <div className="mt-6 space-y-5">
                 {events.map((event, index) => (

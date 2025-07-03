@@ -21,7 +21,7 @@ export default function PrayerRequest() {
     };
 
     return (
-        <main className="relative h-screen w-full px-[15%] py-20 text-[#ddd]">
+        <main className="relative h-screen w-full px-[15%] max-sm:px-[5%] py-20 text-[#ddd]">
             <div className="pb-12">
                 <Link
                     href="/resources"

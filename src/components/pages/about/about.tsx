@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function About() {
     return(
-        <main className="relative flex flex-col gap-10 justify-center w-full h-screen  px-[15%] text-[#ddd]">
+        <main className="relative py-20 flex flex-col gap-10 justify-center w-full min-h-screen max-sm:px-[5%]  px-[15%] text-[#ddd]">
             {/*<div*/}
             {/*    className="absolute inset-0 bg-[url('/paper-texture.jpg')] bg-repeat opacity-10 mix-blend-multiply pointer-events-none z-0"*/}
             {/*/>*/}
@@ -17,7 +17,7 @@ export function About() {
                 Through preaching, teaching, and living out these truths, Original Seed Ministries aims to point every soul to Calvary — to a deeper walk with the Lord, a stronger love for His people, and a steadfast faith in His Word.
             </p>
 
-            <div className="flex">
+            <div className="flex mb-10">
                 <Link
                     href="#"
                     className="border hover:bg-[#6D2E47] hover:border-[#6D2E47] flex py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-500 text-[#ddd]"

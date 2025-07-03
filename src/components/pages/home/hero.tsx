@@ -19,11 +19,11 @@ export function Hero() {
             <p className="text-[#ddd] max-sm:text-lg text-2xl tracking-wide italic">
                 Join us @10:00am this Sunday!
             </p>
-            <div className="flex gap-5">
-                <Link href="/about" className="bg-[#6D2E47]  py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
+            <div className="flex gap-5 items-stretch w-full">
+                <Link href="/about" className="bg-[#6D2E47] text-center flex-1 max-sm:px-2  py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
                     Learn More
                 </Link>
-                <Link href="/live" className="border py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
+                <Link href="/live" className="border flex-1 py-4 px-8 text-center font-light max-sm:px-2 tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
                     Watch Online
                 </Link>
             </div>
