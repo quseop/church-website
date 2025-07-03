@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function About() {
     return(
-        <main className="flex flex-col justify-center gap-10 w-full h-screen  px-[15%] text-[#ddd]">
+        <main className="relative flex flex-col gap-10 justify-center w-full h-screen  px-[15%] text-[#ddd]">
             {/*<div*/}
             {/*    className="absolute inset-0 bg-[url('/paper-texture.jpg')] bg-repeat opacity-10 mix-blend-multiply pointer-events-none z-0"*/}
             {/*/>*/}
