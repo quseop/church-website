@@ -1,4 +1,4 @@
-import Connect from "@/components/pages/contant/connect";
+import Connect from "@/components/pages/contact/connect";
 
 export default function ContactPage() {
     return (

@@ -2,7 +2,7 @@ export default function Live() {
     const isLive = false; // 🔁 You can later fetch live status from YouTube API
 
     return (
-        <main className="min-h-screen w-full px-[15%] py-20 text-[#ddd]">
+        <main className="h-screen w-full px-[15%] py-20 text-[#ddd]">
             <h1 className="text-3xl font-light tracking-widest mb-6">Live Service</h1>
             <p className="text-sm text-gray-400 mb-8 w-[60%]">
                 Join us for our live broadcasts — Sundays at 10 AM and Wednesdays at 7 PM. Stay tuned for when the Word goes forth.
