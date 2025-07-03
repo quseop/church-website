@@ -1,4 +1,4 @@
-import { Download, FileText } from "lucide-react";
+import {ArrowLeft, Download, FileText} from "lucide-react";
 import Link from "next/link";
 
 type StudyGuide = {
@@ -27,11 +27,23 @@ const guides: StudyGuide[] = [
 
 export function StudyGuides() {
     return (
-        <main className="relative min-h-screen w-full px-[15%] py-20 text-[#ddd]">
+        <main className="relative flex flex-col h-screen w-full px-[15%] py-20 text-[#ddd]">
+
+            <div className="pb-12">
+                <Link
+                    href="/resources"
+                    className=" hover:bg-[#6D2E47] hover:border-[#6D2E47] font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 text-[#ddd]"
+                >
+                    <ArrowLeft size={45} className="border rounded-3xl p-2" />
+                </Link>
+            </div>
+
             <h1 className="text-3xl font-light tracking-widest mb-6">Study Guides</h1>
             <p className="text-gray-400 text-sm mb-12 w-[60%]">
                 These free resources are made available to help you grow in your walk with the Lord. Each guide is written with simplicity and scriptural clarity.
             </p>
+
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {guides.map((guide, i) => (
@@ -57,14 +69,7 @@ export function StudyGuides() {
                 ))}
             </div>
 
-            <div className="pt-12">
-                <Link
-                    href="/resources"
-                    className="border hover:bg-[#6D2E47] hover:border-[#6D2E47] py-3 px-6 font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 text-[#ddd]"
-                >
-                    Back to Resources
-                </Link>
-            </div>
+
         </main>
     );
 }

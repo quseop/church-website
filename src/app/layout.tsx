@@ -39,7 +39,7 @@ export default function RootLayout({
                   <div className="absolute inset-0 bg-black/50 z-10 transition-opacity duration-500 ease-in-out"/>
               </div>
 
-              <section className="relative z-20 w-full h-screen flex-col flex">
+              <section className="relative z-20 w-full max-h-screen flex-col flex">
                   <Header />
                   {children}
               </section>

@@ -9,8 +9,8 @@ export function Announcements(){
             icon: <Calendar className="w-5 h-5" />,
         },
         {
-            title: "Bible Study",
-            date: "Every Wednesday @6:30pm",
+            title: "Prayer Service",
+            date: "Every Wednesday @7:00pm",
             icon: <BookOpen className="w-5 h-5" />,
         },
         {
@@ -27,7 +27,7 @@ export function Announcements(){
                 {events.map((event, index) => (
                     <div
                         key={index}
-                        className="flex items-start space-x-4 p-4 rounded hover:bg-white/5 transition"
+                        className="flex items-center space-x-4 p-4 rounded hover:bg-white/5 transition"
                     >
                         <div className="text-[#ddd]">{event.icon}</div>
                         <div className="flex flex-col">
