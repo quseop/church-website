@@ -1,6 +1,5 @@
 import {ArrowLeft, ExternalLink} from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 type Sermon = {
     title: string;
@@ -20,7 +19,7 @@ const sermons: Sermon[] = [
 
 export function Sermons() {
     return (
-        <main className="min-h-screen w-full px-[15%] py-20 text-[#ddd]">
+        <main className=" h-screen w-full px-[15%] py-20 text-[#ddd]">
             <div className="pb-12">
                 <Link
                     href="/resources"
@@ -34,7 +33,7 @@ export function Sermons() {
                 Watch the latest sermons from Original Seed Ministries on YouTube.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid mb-20 grid-cols-1 md:grid-cols-3 gap-8">
                 {sermons.map((s, i) => (
                     <a
                         key={i}
