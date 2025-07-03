@@ -1,9 +1,7 @@
 import {
     BookOpen,
     HandPlatter,
-    CalendarCheck,
-    Headphones,
-    Link as LinkIcon, Quote,
+    Link as LinkIcon, Quote, Video,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -22,16 +20,10 @@ export function Resources() {
             link: "/resources/prayer",
         },
         {
-            title: "Reading Plans",
-            description: "Explore Bible reading plans for daily devotion.",
-            icon: <CalendarCheck className="w-6 h-6" />,
-            link: "/resources/reading-plans",
-        },
-        {
-            title: "Audio Sermons",
-            description: "Listen to past sermons anytime, anywhere.",
-            icon: <Headphones className="w-6 h-6" />,
-            link: "/resources/audio-sermons",
+            title: "Sermons",
+            description: "Watch recent sermons and messages from our YouTube channel.",
+            icon: <Video className="w-6 h-6" />,
+            link: "/resources/sermons",
         },
         {
             title: "Testimonies",
@@ -43,7 +35,7 @@ export function Resources() {
             title: "Recommended Links",
             description: "Explore trusted external resources and ministries.",
             icon: <LinkIcon className="w-6 h-6" />,
-            link: "/resources/links",
+            link: "/resources/recommended",
         }
 
     ];
@@ -68,14 +60,6 @@ export function Resources() {
                 ))}
             </div>
 
-            <div className="pt-12">
-                <a
-                    href="/resources"
-                    className="border hover:bg-[#6D2E47] hover:border-[#6D2E47] py-3 px-6 font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 text-[#ddd]"
-                >
-                    View All Resources
-                </a>
-            </div>
         </section>
     );
 }

@@ -7,12 +7,11 @@ export function Header(){
 
     return(
         <header className="flex text-white w-full px-[15%] py-5 items-center justify-between h-[10%]">
-            <h2 className="font-black text-3xl tracking-tighter">OSM</h2>
+            <Link href="/" className="font-black text-3xl tracking-tighter">OSM</Link>
             <nav className="flex gap-5  tracking-wide font-light items-center">
                 <Link href="/about" className={linkStyle}>About Us</Link>
                 <Link href="#" className={linkStyle}>Live</Link>
                 <Link href="/announcements" className={linkStyle}>Announcements</Link>
-                <Link href="#" className={linkStyle}>Sermons</Link>
                 <Link href="/resources" className={linkStyle}>Resources</Link>
                 <Link
                     href="#"

@@ -20,7 +20,7 @@ export function Hero() {
                 Join us @10:00am this Sunday!
             </p>
             <div className="flex gap-5">
-                <Link href="#" className="bg-[#6D2E47] py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
+                <Link href="/about" className="bg-[#6D2E47] py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
                     Learn More
                 </Link>
                 <Link href="#" className="border py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
