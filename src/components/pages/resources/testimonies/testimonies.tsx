@@ -40,7 +40,7 @@ export default function TestimoniesList() {
             </div>
 
         <h1 className="text-3xl font-light tracking-widest mb-6">Testimonies</h1>
-            <p className="text-sm text-gray-400 mb-12 w-[60%]">
+            <p className="text-sm text-gray-400 mb-12 w-[60%] max-sm:w-[100%]">
                 “They overcame by the blood of the Lamb and by the word of their testimony.” — Revelation 12:11
             </p>
 
