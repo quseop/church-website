@@ -8,10 +8,10 @@ const dancingScript = Dancing_Script({
 
 export function Hero() {
     return (
-        <main className="flex px-[15%] items-center max-sm:px-[5%] text-white flex-col w-full bg-gradient-to-r h-[90%] justify-center gap-10">
-            <p className="text-3xl flex flex-col items-center font-light leading-15 text-[#dddz] ">
+        <main className="flex px-[15%] max-sm:items-center max-sm:px-[5%] text-white flex-col w-full bg-gradient-to-r h-[90%] justify-center gap-10">
+            <p className="text-3xl flex flex-col max-sm:items-center font-light leading-15 text-[#dddz] ">
                 <span className={`${dancingScript.className} text-[#6D2E46] max-sm:text-4xl text-5xl`}>Original Seed Ministries.</span>
-                <span className="font-light text-center uppercase max-sm:text-5xl text-7xl">
+                <span className="font-light max-sm:text-center uppercase max-sm:text-5xl text-7xl">
 
                     Pointing souls <br /> to Calvary
                 </span>
