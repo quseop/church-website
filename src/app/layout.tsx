@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type {Metadata, Viewport} from "next";
 import { Geist} from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
@@ -9,6 +9,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+    themeColor: "#111",
+}
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://church-website-lyart.vercel.app"),
