@@ -41,7 +41,7 @@ export function Resources() {
     ];
 
     return (
-        <section className="relative w-full h-screen max-sm:px-[5%] px-[15%] py-20 text-[#ddd]">
+        <section className="relative w-full h-screen max-sm:px-[5%] px-[15%] py-20 text-black">
             <h2 className="text-3xl font-light tracking-widest mb-12">Resources</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -49,12 +49,12 @@ export function Resources() {
                     <Link
                         key={i}
                         href={res.link}
-                        className="group flex items-center space-x-5 border border-white/10 hover:border-[#6D2E47] p-6 rounded-md hover:bg-[#6D2E47]/10 transition-all duration-300"
+                        className="group flex items-center space-x-5 border border-white hover:border-[#6D2E47] p-6 rounded-md hover:bg-[#6D2E47]/10 transition-all duration-300"
                     >
-                        <div className="text-[#ccc] group-hover:text-[#6D2E47]">{res.icon}</div>
+                        <div className=" group-hover:text-[#6D2E47]">{res.icon}</div>
                         <div>
                             <h3 className="text-xl font-light tracking-wide">{res.title}</h3>
-                            <p className="text-sm text-gray-400">{res.description}</p>
+                            <p className="text-sm text-gray-700">{res.description}</p>
                         </div>
                     </Link>
                 ))}

@@ -23,7 +23,7 @@ export function Hero() {
                 <Link href="/about" className="bg-[#6D2E47] text-center max-sm:flex-1 max-sm:px-2  py-4 px-8 font-light tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
                     Learn More
                 </Link>
-                <Link href="/live" className="border max-sm:flex-1 py-4 px-8 text-center font-light max-sm:px-2 tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-[#ddd]" >
+                <Link href="/live" className="border max-sm:flex-1 py-4 px-8 text-center font-light max-sm:px-2 tracking-widest rounded hover:rounded-4xl transition-all duration-300 text-white" >
                     Watch Online
                 </Link>
             </div>

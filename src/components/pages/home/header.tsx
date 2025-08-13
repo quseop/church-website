@@ -40,7 +40,7 @@ export function Header() {
 
             {/* Mobile nav */}
             {isOpen && (
-                <div className="absolute top-full left-0 w-full   py-6 flex flex-col gap-6 md:hidden">
+                <div className="absolute bg-[#96958C] top-full left-0 w-full px-2   py-6 flex flex-col gap-6 md:hidden">
                     <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>About Us</Link>
                     <Link href="/live" className={linkStyle} onClick={() => setIsOpen(false)}>Live</Link>
                     <Link href="/announcements" className={linkStyle} onClick={() => setIsOpen(false)}>Announcements</Link>
