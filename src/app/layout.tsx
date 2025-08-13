@@ -78,6 +78,9 @@ export default function RootLayout({
                   {children}
                   <Analytics />
               </section>
+              <section className="h-[50vh] w-full bg-[#111111]">
+
+              </section>
           </section>
       </body>
     </html>

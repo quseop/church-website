@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { MapPin, Send } from "lucide-react";
 import React from "react";
 
 export default function Connect() {
