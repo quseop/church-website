@@ -1,6 +1,6 @@
 export function TithesOfferings(){
     return (
-        <main className="relative py-20 flex flex-col gap-10  w-full h-screen max-sm:px-[5%] px-[15%] text-[#222]">
+        <main className="relative py-20 flex flex-col gap-10 max-sm:bg-[#96958C]  w-full h-screen max-sm:px-[5%] px-[15%] text-[#222]">
 
             <div className="flex flex-col gap-3">
                 <h1 className="text-3xl">Tithes & Offerings</h1>

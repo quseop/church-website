@@ -22,7 +22,7 @@ export function Header() {
                 <Link href="/about" className={linkStyle}>About Us</Link>
                 <Link href="/live" className={linkStyle}>Live</Link>
                 <Link href="/announcements" className={linkStyle}>Announcements</Link>
-                <Link href="/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
+                <Link href="/tithes/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
                 <Link href="/resources" className={linkStyle}>Resources</Link>
                 <Link
                     href="/contact"
@@ -44,11 +44,11 @@ export function Header() {
 
             {/* Mobile nav */}
             {isOpen && (
-                <div className="absolute bg-[#96958C] top-full left-0 w-full px-2   py-6 flex flex-col gap-6 md:hidden">
+                <div className="absolute border-b border-black bg-[#96958C] top-full left-0 w-full px-2   py-6 flex flex-col gap-6 md:hidden">
                     <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>About Us</Link>
                     <Link href="/live" className={linkStyle} onClick={() => setIsOpen(false)}>Live</Link>
                     <Link href="/announcements" className={linkStyle} onClick={() => setIsOpen(false)}>Announcements</Link>
-                    <Link href="/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
+                    <Link href="/tithes/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
                     <Link href="/resources" className={linkStyle} onClick={() => setIsOpen(false)}>Resources</Link>
                     <Link
                         href="/contact"

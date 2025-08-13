@@ -21,7 +21,7 @@ export function Announcements(){
     ];
 
     return(
-        <section className="h-screen w-full px-[15%] max-sm:px-[5%] py-20">
+        <section className="h-screen max-sm:bg-[#96958C] w-full px-[15%] max-sm:px-[5%] py-20">
             <h2 className="text-3xl font-light tracking-widest">Announcements & Events</h2>
             <div className="mt-6 space-y-5">
                 {events.map((event, index) => (

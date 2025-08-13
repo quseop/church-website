@@ -28,7 +28,7 @@ const testimonies: Testimony[] = [
 
 export default function TestimoniesList() {
     return (
-        <main className=" px-[15%] max-sm:px-[5%] py-10">
+        <main className="max-sm:bg-[#96958C] max-sm:min-h-screen px-[15%] max-sm:px-[5%] py-10">
 
             <div className="pb-12">
                 <Link

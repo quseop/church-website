@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Connect() {
     return (
-        <main className="h-screen w-full max-sm:px-[5%] px-[15%] py-20 text-black">
+        <main className="max-sm:bg-[#96958C] w-full max-sm:px-[5%] px-[15%] py-20 text-black">
             <h1 className="text-3xl font-light tracking-widest mb-6">Connect With Us</h1>
             <p className="text-sm  mb-12 md:w-[60%]">
                 Whether you have a question, a prayer request, or just want to get in touch, we’d love to hear from you.
@@ -12,21 +12,21 @@ export default function Connect() {
             {/* Contact Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
                 <div className="space-y-6 max-sm:border-y py-10 border-white/10">
-                    <div className="flex items-start gap-4">
-                        <Mail className="w-5 h-5 mt-1 text-[#6D2E47]" />
-                        <div>
-                            <h3 className="text-base ">Email</h3>
-                            <p className="text-sm text-gray-700">originalseedministries@gmail.com</p>
-                        </div>
-                    </div>
+                    {/*<div className="flex items-start gap-4">*/}
+                    {/*    <Mail className="w-5 h-5 mt-1 text-[#6D2E47]" />*/}
+                    {/*    <div>*/}
+                    {/*        <h3 className="text-base ">Email</h3>*/}
+                    {/*        <p className="text-sm text-gray-700">originalseedministries@gmail.com</p>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
-                    <div className="flex items-start gap-4">
-                        <Phone className="w-5 h-5 mt-1 text-[#6D2E47]" />
-                        <div>
-                            <h3 className="text-base ">WhatsApp</h3>
-                            <p className="text-sm text-gray-700">+27 71 234 5678</p>
-                        </div>
-                    </div>
+                    {/*<div className="flex items-start gap-4">*/}
+                    {/*    <Phone className="w-5 h-5 mt-1 text-[#6D2E47]" />*/}
+                    {/*    <div>*/}
+                    {/*        <h3 className="text-base ">WhatsApp</h3>*/}
+                    {/*        <p className="text-sm text-gray-700">+27 71 234 5678</p>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     <div className="flex items-start gap-4">
                         <MapPin className="w-5 h-5 mt-1 text-[#6D2E47]" />
