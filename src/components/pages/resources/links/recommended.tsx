@@ -38,7 +38,7 @@ const links: LinkItem[] = [
 
 export function RecommendedLinks() {
     return (
-        <main className="h-screen overflow-hidden w-full px-[15%] py-10 ">
+        <main className="max-sm:bg-[#96958C]  w-full px-[15%] py-10 ">
             <div className="pb-12">
                 <Link
                     href="/resources"
@@ -48,7 +48,7 @@ export function RecommendedLinks() {
                 </Link>
             </div>
             <h1 className="text-3xl font-light tracking-widest mb-6">Recommended Links</h1>
-            <p className="text-sm text-gray-700 mb-12 w-[60%]">
+            <p className="text-sm max-sm:w-full text-gray-700 mb-12 w-[60%]">
                 A collection of trusted resources for studying, growing, and walking in the truth of God’s Word.
             </p>
 

@@ -19,7 +19,7 @@ const sermons: Sermon[] = [
 
 export function Sermons() {
     return (
-        <main className=" h-screen max-sm:px-[5%] w-full px-[15%] py-10 ">
+        <main className="bg-[#96958C]  max-sm:px-[5%] w-full px-[15%] py-10 ">
             <div className="pb-12">
                 <Link
                     href="/resources"
