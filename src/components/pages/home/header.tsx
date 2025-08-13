@@ -31,7 +31,7 @@ export function Header() {
 
             {/* Hamburger icon on mobile */}
             <button
-                className="md:hidden text-white"
+                className="md:hidden text-black"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle navigation"
             >

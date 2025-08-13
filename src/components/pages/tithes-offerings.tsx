@@ -1,7 +1,11 @@
 export function TithesOfferings(){
     return (
         <main className="relative py-20 flex flex-col gap-10  w-full h-screen max-sm:px-[5%] px-[15%] text-[#222]">
-            <h1 className="text-3xl">Malachi 3:10</h1>
+
+            <div className="flex flex-col gap-3">
+                <h1 className="text-3xl">Tithes & Offerings</h1>
+                <h1 className="text-xl font-bold">Malachi 3:10</h1>
+            </div>
 
             <p className="text-xl max-sm:text-sm font-light -leading-1  max-sm:w-full w-[60%] tracking-widest">
                 Bank: <span className="font-medium">Nedbank</span>
