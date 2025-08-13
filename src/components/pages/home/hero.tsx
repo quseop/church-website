@@ -13,7 +13,7 @@ export function Hero() {
                 <span className={`${dancingScript.className} text-[#6D2E46] max-sm:text-4xl text-5xl`}>Original Seed Ministries.</span>
                 <span className="font-light max-sm:text-center uppercase max-sm:text-5xl text-7xl">
 
-                    Pointing souls <br /> to Calvary
+                    Going An<br /> Octave Higher
                 </span>
             </p>
             <p className="text-[#ddd] max-sm:text-lg text-2xl tracking-wide italic">
