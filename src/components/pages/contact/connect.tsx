@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import React from "react";
 
 export default function Connect() {
     return (
@@ -10,7 +11,7 @@ export default function Connect() {
 
             {/* Contact Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-                <div className="space-y-6">
+                <div className="space-y-6 max-sm:border-y py-10 border-white/10">
                     <div className="flex items-start gap-4">
                         <Mail className="w-5 h-5 mt-1 text-[#6D2E47]" />
                         <div>
@@ -42,6 +43,7 @@ export default function Connect() {
 
                 {/* Message / Prayer Form */}
                 <form className="flex md:px-30 flex-col gap-4">
+
                     <input
                         type="text"
                         placeholder="Your Name"
@@ -61,9 +63,13 @@ export default function Connect() {
                         type="submit"
                         className="border bg-muted hover:bg-[#6D2E47] hover:border-[#6D2E47] py-3 px-6 font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500  inline-flex items-center justify-center gap-2"
                     >
-                        <Send className="w-4 h-4 text-black" /> Feature Under Construction
+                        <Send className="w-4 h-4 text-black" /> Send Request
                     </button>
+                    <p className="bg-orange-500 font-bold text-center px-2 rounded-3xl">
+                        section under construction
+                    </p>
                 </form>
+
             </div>
 
             {/* CTA to Sermons */}

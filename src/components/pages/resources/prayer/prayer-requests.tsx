@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import {ArrowLeft, Send} from "lucide-react";
 import Link from "next/link";
 
@@ -22,13 +22,17 @@ export default function PrayerRequest() {
 
     return (
         <main className="relative h-screen w-full px-[15%] max-sm:px-[5%] py-20 ">
-            <div className="pb-12">
+            <div className="flex items-center gap-5 pb-12">
                 <Link
                     href="/resources"
                     className=" hover:bg-[#6D2E47] hover:border-[#6D2E47] font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 "
                 >
                     <ArrowLeft size={45} className="border border-black rounded-3xl p-2" />
                 </Link>
+
+                <p className="bg-orange-500 font-bold px-2 rounded-3xl">
+                   section under construction
+                </p>
             </div>
             <h1 className="text-3xl font-light tracking-widest mb-6">Prayer Request</h1>
             <p className="text-gray-700 text-sm mb-12 w-[60%]">
@@ -40,7 +44,7 @@ export default function PrayerRequest() {
             {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6 w-full md:w-[60%]">
                     <div>
-                        <label className="block text-sm  mb-1">Name (optional)</label>
+                        <label className="block text-sm mb-1">Name (optional)</label>
                         <input
                             type="text"
                             value={formData.name}

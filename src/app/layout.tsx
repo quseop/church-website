@@ -4,6 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import {Header} from "@/components/pages/home/header";
 import { Analytics } from "@vercel/analytics/next"
+import React from "react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
         siteName: "Original Seed Ministries",
         images: [
             {
-                url: "/og-image.jpg", // Replace with your actual OG image path
+                url: "/osm.png",
                 width: 1200,
                 height: 630,
                 alt: "Original Seed Ministries",
@@ -56,10 +57,19 @@ export default function RootLayout({
           <section className="relative w-full h-screen flex-col flex z-20 transition-all duration-500 ease-in-out">
               <div className="fixed inset-0 w-full h-screen">
                   <Image
+                      src="/prophet-mobile.png"
+                      alt="hero"
+                      fill
+                      sizes="100vw"
+                      className="object-cover brightness-125 transition-transform duration-500 ease-in-out z-0 block sm:hidden"
+                      priority
+                  />
+
+                  <Image
                       src="/prophet-wallpaper.png"
                       alt="hero"
                       fill
-                      className="object-cover brightness-125 transition-transform duration-500 ease-in-out z-0" priority />
+                      className="object-cover brightness-125 transition-transform duration-500 ease-in-out z-0 hidden sm:block" priority />
                   <div className="absolute inset-0 bg-[#D7D5C8]/70 z-10 transition-opacity duration-500 ease-in-out"/>
               </div>
 
