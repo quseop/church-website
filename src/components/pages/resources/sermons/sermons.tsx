@@ -19,17 +19,17 @@ const sermons: Sermon[] = [
 
 export function Sermons() {
     return (
-        <main className=" h-screen max-sm:px-[5%] w-full px-[15%] py-10 text-[#ddd]">
+        <main className=" h-screen max-sm:px-[5%] w-full px-[15%] py-10 ">
             <div className="pb-12">
                 <Link
                     href="/resources"
-                    className=" hover:bg-[#6D2E47] hover:border-[#6D2E47] font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 text-[#ddd]"
+                    className=" hover:bg-[#6D2E47] hover:border-[#6D2E47] font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500"
                 >
-                    <ArrowLeft size={45} className="border rounded-3xl p-2" />
+                    <ArrowLeft size={45} className="border border-black rounded-3xl p-2" />
                 </Link>
             </div>
             <h1 className="text-3xl font-light tracking-widest mb-6">Sermons</h1>
-            <p className="text-sm text-gray-400 mb-12 w-[60%]">
+            <p className="text-sm text-gray-700 mb-12 w-[60%]">
                 Watch the latest sermons from Original Seed Ministries on YouTube.
             </p>
 
@@ -40,7 +40,7 @@ export function Sermons() {
                         href={s.youtubeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="border border-white/10 hover:border-[#6D2E47] p-4 rounded hover:bg-[#6D2E47]/10 transition-all flex flex-col gap-3"
+                        className="border border-white hover:border-[#6D2E47] p-4 rounded hover:bg-[#6D2E47]/10 transition-all flex flex-col gap-3"
                     >
                         <img
                             // width={100}
@@ -51,7 +51,7 @@ export function Sermons() {
                         />
                         <div>
                             <h3 className="text-lg font-light">{s.title}</h3>
-                            <p className="text-sm text-gray-400 mb-1">{s.date}</p>
+                            <p className="text-sm text-gray-700 mb-1">{s.date}</p>
                             <span className="inline-flex items-center text-sm text-[#6D2E47]">
                 Watch on YouTube <ExternalLink className="ml-1 w-4 h-4" />
               </span>
