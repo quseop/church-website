@@ -38,17 +38,17 @@ const links: LinkItem[] = [
 
 export function RecommendedLinks() {
     return (
-        <main className="h-screen overflow-hidden w-full px-[15%] py-10 text-[#ddd]">
+        <main className="h-screen overflow-hidden w-full px-[15%] py-10 ">
             <div className="pb-12">
                 <Link
                     href="/resources"
-                    className=" hover:bg-[#6D2E47] hover:border-[#6D2E47] font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 text-[#ddd]"
+                    className=" hover:bg-[#6D2E47] hover:border-[#6D2E47] font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500"
                 >
-                    <ArrowLeft size={45} className="border rounded-3xl p-2" />
+                    <ArrowLeft size={45} className="border border-black rounded-3xl p-2" />
                 </Link>
             </div>
             <h1 className="text-3xl font-light tracking-widest mb-6">Recommended Links</h1>
-            <p className="text-sm text-gray-400 mb-12 w-[60%]">
+            <p className="text-sm text-gray-700 mb-12 w-[60%]">
                 A collection of trusted resources for studying, growing, and walking in the truth of God’s Word.
             </p>
 
@@ -64,7 +64,7 @@ export function RecommendedLinks() {
                         {link.icon}
                         <div>
                             <h3 className="text-lg font-light">{link.title}</h3>
-                            <p className="text-sm text-gray-400">{link.description}</p>
+                            <p className="text-sm text-gray-700">{link.description}</p>
                             <span className="inline-flex items-center text-sm text-[#6D2E47] mt-1">
                 Visit Site <ExternalLink className="ml-1 w-4 h-4" />
               </span>
