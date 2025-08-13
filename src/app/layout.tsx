@@ -3,7 +3,7 @@ import {Geist, Roboto_Slab} from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import {Header} from "@/components/pages/home/header";
-
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -66,6 +66,7 @@ export default function RootLayout({
               <section className="relative z-20 w-full max-h-screen flex-col flex">
                   <Header />
                   {children}
+                  <Analytics />
               </section>
           </section>
       </body>
