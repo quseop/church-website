@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const linkStyle = "hover:bg-[#6D2E46] hover:text-white px-5 py-1.5 rounded-3xl transition-colors duration-300"
 
@@ -11,7 +12,10 @@ export function Header() {
 
     return (
         <header className="flex text-black w-full max-sm:px-[5%] px-[15%] py-5 items-center justify-between h-[10%] relative z-50">
-            <Link href="/" className="font-black text-3xl tracking-tighter">OSM</Link>
+            <Link href="/">
+                <Image src={"/osm.png"} width={100} height={50} className="mt-2" alt={"OSM Logo"} />
+            </Link>
+
 
             {/* Desktop nav */}
             <nav className="hidden md:flex gap-2 tracking-wide font-light items-center">
