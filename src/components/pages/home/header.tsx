@@ -22,7 +22,7 @@ export function Header() {
                 <Link href="/about" className={linkStyle}>About Us</Link>
                 <Link href="/live" className={linkStyle}>Live</Link>
                 <Link href="/announcements" className={linkStyle}>Announcements</Link>
-                <Link href="/tithes/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
+                <Link href="/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
                 <Link href="/resources" className={linkStyle}>Resources</Link>
                 <Link
                     href="/contact"
@@ -48,7 +48,7 @@ export function Header() {
                     <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>About Us</Link>
                     <Link href="/live" className={linkStyle} onClick={() => setIsOpen(false)}>Live</Link>
                     <Link href="/announcements" className={linkStyle} onClick={() => setIsOpen(false)}>Announcements</Link>
-                    <Link href="/tithes/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
+                    <Link href="/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
                     <Link href="/resources" className={linkStyle} onClick={() => setIsOpen(false)}>Resources</Link>
                     <Link
                         href="/contact"
