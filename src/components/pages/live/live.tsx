@@ -2,11 +2,13 @@ export default function Live() {
     const isLive = false; // 🔁 You can later fetch live status from YouTube API
 
     return (
-        <main className="h-screen w-full px-[15%] max-sm:px-[5%] py-20 text-[#ddd]">
+        <main className="h-screen w-full px-[15%] max-sm:px-[5%] py-20 ">
             <h1 className="text-3xl font-light tracking-widest mb-6">Live Service</h1>
-            <p className="text-sm text-gray-400 mb-8 w-[60%] max-sm:w-[90%]">
+            <p className="text-sm  mb-8 w-[60%] max-sm:w-[90%]">
                 Join us for our live broadcasts — Sundays at 10 AM and Wednesdays at 7 PM. Stay tuned for when the Word goes forth.
             </p>
+
+
 
             {isLive ? (
                 <div className="aspect-video w-full max-w-4xl">
@@ -19,10 +21,10 @@ export default function Live() {
                     />
                 </div>
             ) : (
-                <div className="border border-white/10 rounded p-8 max-w-2xl">
+                <div className="border  rounded p-8 max-w-2xl">
                     <p className="text-lg font-light mb-2">No live service at the moment.</p>
-                    <p className="text-sm text-gray-400">Tune in during our usual service times:</p>
-                    <ul className="list-disc list-inside mt-2 text-sm text-gray-400">
+                    <p className="text-sm ">Tune in during our usual service times:</p>
+                    <ul className="list-disc list-inside mt-2 text-sm ">
                         <li>Sundays at 10:00 AM</li>
                         <li>Wednesdays at 7:00 PM</li>
                     </ul>
@@ -34,7 +36,7 @@ export default function Live() {
                     href="https://www.youtube.com/@originalseedministries8906"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border hover:bg-[#6D2E47] hover:border-[#6D2E47] py-3 px-6 font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 text-[#ddd]"
+                    className="border hover:bg-[#6D2E47] hover:text-white hover:border-[#6D2E47] py-3 px-6 font-light tracking-widest rounded hover:rounded-3xl transition-all duration-500 "
                 >
                     Visit YouTube Channel
                 </a>
