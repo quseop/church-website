@@ -10,6 +10,7 @@ const linkStyle = "hover:bg-[#6D2E46] hover:text-white px-5 py-1.5 rounded-3xl t
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
+
     return (
         <header className="flex text-black w-full max-sm:px-[5%] px-[15%] py-5 items-center justify-between h-[10%] relative z-50">
             <Link href="/">
@@ -48,7 +49,7 @@ export function Header() {
                     <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>About Us</Link>
                     <Link href="/live" className={linkStyle} onClick={() => setIsOpen(false)}>Live</Link>
                     <Link href="/announcements" className={linkStyle} onClick={() => setIsOpen(false)}>Announcements</Link>
-                    <Link href="/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
+                    <Link href="/tithes-offerings" className={linkStyle} onClick={() => setIsOpen(false)}>Tithes & Offerings</Link>
                     <Link href="/resources" className={linkStyle} onClick={() => setIsOpen(false)}>Resources</Link>
                     <Link
                         href="/contact"

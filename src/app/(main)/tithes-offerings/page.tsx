@@ -1,4 +1,4 @@
-import {TithesOfferings} from "@/components/pages/tithes/tithes-offerings";
+import {TithesOfferings} from "@/components/pages/tithes-offerings/tithes-offerings";
 
 export default function TithesOfferingsPage(){
     return (
