@@ -1,8 +1,5 @@
 import {Hero} from "@/components/pages/home/hero";
-import {Copyright, Facebook, YoutubeIcon} from "lucide-react";
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import {Footer} from "@/components/sub-components/footer";
 
 export function Home(){
