@@ -4,6 +4,11 @@ export function Announcements(){
 
     const events = [
         {
+            title: "Praise & Worship",
+            date: "Friday, 15 August @ 19:30 PM",
+            icon: <Calendar className="w-5 h-5" />,
+        },
+        {
             title: "Sunday School Outing",
             date: "August 30th",
             icon: <Users className="w-5 h-5" />,
