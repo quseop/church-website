@@ -1,4 +1,6 @@
 import {Hero} from "@/components/pages/home/hero";
+import {Copyright} from "lucide-react";
+import React from "react";
 
 export function Home(){
     return(
@@ -17,6 +19,11 @@ export function Home(){
                         Testimonies and Messages of Faith for the Bride of Christ
                     </div>
                 </div>
+            </section>
+            <section className="h-[35vh] flex items-end justify-center py-5 text-white w-full bg-black">
+                <p className=" text-sm font-light flex justify-center items-center gap-1">
+                    <Copyright size={25} /> Original Seed Ministries - 2025
+                </p>
             </section>
 
         </main>
