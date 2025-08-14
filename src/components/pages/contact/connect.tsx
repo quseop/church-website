@@ -1,9 +1,12 @@
 import { MapPin, Send } from "lucide-react";
 import React from "react";
+import {Footer} from "@/components/sub-components/footer";
 
 export default function Connect() {
     return (
-        <main className="max-sm:bg-[#96958C] w-full max-sm:px-[5%] px-[15%] py-20 text-black">
+        <>
+
+        <main className="max-sm:bg-[#96958C] min-h-screen w-full max-sm:px-[5%] px-[15%] py-20 text-black">
             <h1 className="text-3xl font-light tracking-widest mb-6">Connect With Us</h1>
             <p className="text-sm  mb-12 md:w-[60%]">
                 Whether you have a question, a prayer request, or just want to get in touch, we’d love to hear from you.
@@ -82,5 +85,7 @@ export default function Connect() {
                 </a>
             </div>
         </main>
+        <Footer />
+        </>
     );
 }
