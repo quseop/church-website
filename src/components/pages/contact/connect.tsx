@@ -1,4 +1,4 @@
-import { MapPin, Send } from "lucide-react";
+import {Mail, MapPin, Phone, Send} from "lucide-react";
 import React from "react";
 import {Footer} from "@/components/sub-components/footer";
 
@@ -15,21 +15,21 @@ export default function Connect() {
             {/* Contact Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
                 <div className="space-y-6 max-sm:border-y py-10 border-white/10">
-                    {/*<div className="flex items-start gap-4">*/}
-                    {/*    <Mail className="w-5 h-5 mt-1 text-[#6D2E47]" />*/}
-                    {/*    <div>*/}
-                    {/*        <h3 className="text-base ">Email</h3>*/}
-                    {/*        <p className="text-sm text-gray-700">originalseedministries@gmail.com</p>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                    <div className="flex items-start gap-4">
+                        <Mail className="w-5 h-5 mt-1 text-[#6D2E47]" />
+                        <div>
+                            <h3 className="text-base ">Email</h3>
+                            <p className="text-sm text-gray-700">blessingtshego@yahoo.com</p>
+                        </div>
+                    </div>
 
-                    {/*<div className="flex items-start gap-4">*/}
-                    {/*    <Phone className="w-5 h-5 mt-1 text-[#6D2E47]" />*/}
-                    {/*    <div>*/}
-                    {/*        <h3 className="text-base ">WhatsApp</h3>*/}
-                    {/*        <p className="text-sm text-gray-700">+27 71 234 5678</p>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                    <div className="flex items-start gap-4">
+                        <Phone className="w-5 h-5 mt-1 text-[#6D2E47]" />
+                        <div>
+                            <h3 className="text-base ">Call</h3>
+                            <p className="text-sm text-gray-700">078 272 8442</p>
+                        </div>
+                    </div>
 
                     <div className="flex items-start gap-4">
                         <MapPin className="w-5 h-5 mt-1 text-[#6D2E47]" />
