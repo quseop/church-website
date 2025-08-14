@@ -23,12 +23,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
     metadataBase: new URL("https://church-website-lyart.vercel.app"),
     title: "Original Seed Ministries",
-    description: "Sharing the Gospel of Jesus Christ in truth and simplicity — pointing every soul to Calvary.",
+    description: "End Time Message in Pretoria. We believe the Bible and the Spoken Word as preached by Malachi 4 (William Marrion Branham).",
     keywords: ["Gospel","End Time Message", "Original Seed Ministries", "Message of the Hour" ,"Faith", "Bible", "Sermons", "South Africa", "Christian Ministry", "Prayer", "Testimonies"],
     authors: [{ name: "Original Seed Ministries", url: "https://www.originalseedministries.org" }],
     openGraph: {
         title: "Original Seed Ministries",
-        description: "Faith comes by hearing — and hearing by the Word of God. Join us for sermons, testimonies, and study resources.",
+        description: "End Time Message in Pretoria. We believe the Bible and the Spoken Word as preached by Malachi 4 (William Marrion Branham).",
         url: "https://www.originalseedministries.org",
         siteName: "Original Seed Ministries",
         images: [
