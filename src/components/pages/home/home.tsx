@@ -2,6 +2,7 @@ import {Hero} from "@/components/pages/home/hero";
 import {Copyright, Facebook, YoutubeIcon} from "lucide-react";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Home(){
     return(
@@ -31,6 +32,10 @@ export function Home(){
                         <YoutubeIcon size={25} />
                     </Link>
                 </div>
+
+                <Link href="/">
+                    <Image src={"/osm.png"} width={100} height={50} className="mt-2" alt={"OSM Logo"} />
+                </Link>
 
                 <p className=" text-sm font-light flex justify-center items-center gap-1">
                     <Copyright size={25} /> Original Seed Ministries - 2025
