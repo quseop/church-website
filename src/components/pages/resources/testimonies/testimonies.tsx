@@ -13,7 +13,7 @@ const testimonies: Testimony[] = [];
 
 export default function TestimoniesList() {
     return (
-        <main className="max-sm:bg-[#96958C] max-sm:min-h-screen px-[15%] max-sm:px-[5%] py-10">
+        <main className="relative py-20 flex flex-col gap-5 max-sm:bg-[#96958C] overflow-hidden no-scrollbar  w-full min-h-screen max-sm:px-[5%] px-[15%] text-[#222]">
 
             <div className="pb-12">
                 <Link
@@ -24,7 +24,7 @@ export default function TestimoniesList() {
                 </Link>
             </div>
 
-        <h1 className="text-3xl font-light tracking-widest mb-6">Testimonies</h1>
+            <h1 className="text-3xl font-light tracking-widest mb-6">Testimonies</h1>
             <p className="text-sm text-gray-700 mb-12 w-[60%] max-sm:w-[100%]">
                 “They overcame by the blood of the Lamb and by the word of their testimony.” — Revelation 12:11
             </p>
@@ -43,6 +43,9 @@ export default function TestimoniesList() {
                         <p className="text-sm ">{post.preview}</p>
                     </Link>
                 ))}
+                {
+                    testimonies.length === 0 && <p className="text-black text-lg italic w-full text-center">No testimonies yet.</p>
+                }
             </div>
         </main>
     );
