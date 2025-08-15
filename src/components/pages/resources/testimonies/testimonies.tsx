@@ -9,22 +9,7 @@ type Testimony = {
     date: string;
 };
 
-const testimonies: Testimony[] = [
-    {
-        title: "He Healed My Body",
-        author: "Sister Naledi",
-        slug: "he-healed-my-body",
-        preview: "After 3 years of pain, the Lord stepped in...",
-        date: "June 10, 2025",
-    },
-    {
-        title: "A Financial Miracle",
-        author: "Brother Thabo",
-        slug: "financial-miracle",
-        preview: "I was broke and jobless. Then God moved...",
-        date: "May 27, 2025",
-    },
-];
+const testimonies: Testimony[] = [];
 
 export default function TestimoniesList() {
     return (
