@@ -37,7 +37,7 @@ export async function sendContactFormEmail(formData: ContactFormData) {
                     
                     <div style="border-top: 1px solid #e9ecef; padding-top: 20px; text-align: center;">
                         <p style="color: #777; font-size: 12px; margin: 0;">
-                            This email was sent from the OASES contact form at ${new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' })}
+                            This email was sent from the OSM contact form at ${new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' })}
                         </p>
                     </div>
                 </div>
