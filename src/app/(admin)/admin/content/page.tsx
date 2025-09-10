@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Quote, Heart, MessageSquare, Camera, Newspaper, Calendar } from "lucide-react"
+import { Quote, Heart, MessageSquare, Camera, Newspaper, Calendar, FileText } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -74,6 +74,14 @@ export default function ContentManagement() {
       icon: Calendar,
       count: stats.services,
       color: "text-indigo-600",
+    },
+    {
+      title: "Study Guides & Notes",
+      description: "Manage PDFs, DOCX and PPT(X)",
+      href: "/admin/content/study-guides",
+      icon: FileText,
+      count: 0,
+      color: "text-amber-600",
     },
   ]
 
