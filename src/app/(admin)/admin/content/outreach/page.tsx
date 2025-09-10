@@ -25,8 +25,17 @@ export default function OutreachManagement() {
 
   useEffect(() => {
     ;(async () => {
-      const res = await fetch('/api/admin/outreach')
-      setItems(await res.json())
+      try {
+        const res = await fetch('/api/admin/outreach')
+        if (!res.ok) {
+          setItems([])
+          return
+        }
+        const data = await res.json().catch(() => [])
+        setItems(Array.isArray(data) ? data : [])
+      } catch {
+        setItems([])
+      }
     })()
   }, [])
 
@@ -54,15 +63,24 @@ export default function OutreachManagement() {
     }
 
     if (editing) {
-      await fetch(`/api/admin/outreach/${editing.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
+      await fetch(`/api/admin/outreach/${editing.id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) }).catch(() => {})
       setEditing(null)
     } else {
-      await fetch('/api/admin/outreach', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
+      await fetch('/api/admin/outreach', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) }).catch(() => {})
       setIsAdding(false)
     }
     setFormData({ title: "", description: "", url: "", alt: "" })
-    const res = await fetch('/api/admin/outreach')
-    setItems(await res.json())
+    try {
+      const res = await fetch('/api/admin/outreach')
+      if (!res.ok) {
+        setItems([])
+      } else {
+        const data = await res.json().catch(() => [])
+        setItems(Array.isArray(data) ? data : [])
+      }
+    } catch {
+      setItems([])
+    }
   }
 
   const handleEdit = (item: OutreachPhoto) => {
@@ -73,16 +91,25 @@ export default function OutreachManagement() {
 
   const handleDelete = async (id: string) => {
     if (confirm("Are you sure you want to delete this photo?")) {
-      await fetch(`/api/admin/outreach/${id}`, { method: 'DELETE' })
-      const res = await fetch('/api/admin/outreach')
-      setItems(await res.json())
+      await fetch(`/api/admin/outreach/${id}`, { method: 'DELETE' }).catch(() => {})
+      try {
+        const res = await fetch('/api/admin/outreach')
+        if (!res.ok) {
+          setItems([])
+        } else {
+          const data = await res.json().catch(() => [])
+          setItems(Array.isArray(data) ? data : [])
+        }
+      } catch {
+        setItems([])
+      }
     }
   }
 
   const cancelEdit = () => {
     setIsAdding(false)
     setEditing(null)
-    setFormData({ title: "", url: "", alt: "" })
+    setFormData({ title: "", description: "", url: "", alt: "" })
   }
 
   return (

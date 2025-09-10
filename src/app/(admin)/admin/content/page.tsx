@@ -119,25 +119,25 @@ export default function ContentManagement() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-3">
-            <Link href="/admin/content/quotes/new">
+            <Link href="/admin/content/quotes">
               <Button variant="outline" size="sm">
                 <Quote className="h-4 w-4 mr-2" />
                 Add Daily Quote
               </Button>
             </Link>
-            <Link href="/admin/content/news/new">
+            <Link href="/admin/content/news">
               <Button variant="outline" size="sm">
                 <Newspaper className="h-4 w-4 mr-2" />
                 Publish News
               </Button>
             </Link>
-            <Link href="/admin/content/services/new">
+            <Link href="/admin/content/services">
               <Button variant="outline" size="sm">
                 <Calendar className="h-4 w-4 mr-2" />
                 Schedule Service
               </Button>
             </Link>
-            <Link href="/admin/content/outreach/new">
+            <Link href="/admin/content/outreach">
               <Button variant="outline" size="sm">
                 <Camera className="h-4 w-4 mr-2" />
                 Upload Photos
