@@ -37,10 +37,6 @@ export default function PrayerRequest() {
                 >
                     <ArrowLeft size={45} className="border border-black rounded-3xl p-2" />
                 </Link>
-
-                <p className="bg-orange-500 font-bold px-2 rounded-3xl">
-                   section under construction
-                </p>
             </div>
             <h1 className="text-3xl font-light tracking-widest mb-6">Prayer Request</h1>
             <p className="text-gray-700 text-sm mb-12 w-[60%]">
