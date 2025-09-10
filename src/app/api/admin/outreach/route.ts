@@ -5,7 +5,7 @@ import { authOptions } from "@/server/auth"
 
 export async function GET() {
   const items = await sql`
-    select id, title, url, alt, created_at as "createdAt", updated_at as "updatedAt"
+    select id, title, description, url, alt, created_at as "createdAt", updated_at as "updatedAt"
     from outreach_photos
     order by created_at desc
   `
@@ -20,9 +20,9 @@ export async function POST(request: Request) {
   }
   const body = await request.json()
   const [created] = await sql`
-    insert into outreach_photos (title, url, alt)
-    values (${body.title || null}, ${body.url}, ${body.alt || null})
-    returning id, title, url, alt, created_at as "createdAt", updated_at as "updatedAt"
+    insert into outreach_photos (title, description, url, alt)
+    values (${body.title || null}, ${body.description || null}, ${body.url}, ${body.alt || null})
+    returning id, title, description, url, alt, created_at as "createdAt", updated_at as "updatedAt"
   `
   return NextResponse.json(created)
 }

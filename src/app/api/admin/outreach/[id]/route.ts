@@ -13,6 +13,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   const { id } = await context.params
   const fields = {
     title: body.title as string | undefined,
+    description: (body.description as string | null | undefined) ?? undefined,
     url: body.url as string | undefined,
     alt: body.alt as string | undefined,
   }
@@ -23,7 +24,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
     if (typeof v !== 'undefined') { sets.push(`${k} = $${i++}`); values.push(v) }
   }
   values.push(id)
-  const text = `update outreach_photos set ${sets.join(', ')} where id = $${i} returning id, title, url, alt, created_at as "createdAt", updated_at as "updatedAt"`
+  const text = `update outreach_photos set ${sets.join(', ')} where id = $${i} returning id, title, description, url, alt, created_at as "createdAt", updated_at as "updatedAt"`
 const [updated] = await (sql as unknown as (q: string, params: unknown[]) => Promise<unknown[]>)(text, values)
   return NextResponse.json(updated)
 }
