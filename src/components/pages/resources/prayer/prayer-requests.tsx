@@ -12,12 +12,20 @@ export default function PrayerRequest() {
         message: "",
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        // Simulate submission logic (replace with API later)
-        setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
+        try {
+            const res = await fetch('/api/prayer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+            if (!res.ok) throw new Error('Failed to submit')
+            setSubmitted(true);
+            setFormData({ name: "", email: "", message: "" });
+        } catch {
+            alert('Sorry, something went wrong submitting your request. Please try again later.')
+        }
     };
 
     return (
