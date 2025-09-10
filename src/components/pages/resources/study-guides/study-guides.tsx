@@ -1,31 +1,14 @@
 import {ArrowLeft, Download, FileText} from "lucide-react";
 import Link from "next/link";
+import { sql } from "@/server/db";
 
 type StudyGuide = {
     title: string;
-    description: string;
+    description: string | null;
     fileUrl: string;
 };
 
-const guides: StudyGuide[] = [
-    {
-        title: "The Basics of Faith",
-        description: "A foundational guide on what it means to live by faith.",
-        fileUrl: "/guides/basics-of-faith.pdf",
-    },
-    {
-        title: "Walking in the Spirit",
-        description: "Understanding spiritual growth and daily surrender.",
-        fileUrl: "/guides/walking-in-the-spirit.pdf",
-    },
-    {
-        title: "The Power of Prayer",
-        description: "Deepening your personal prayer life through scripture.",
-        fileUrl: "/guides/power-of-prayer.pdf",
-    },
-];
-
-export function StudyGuides() {
+export async function StudyGuides() {
     return (
         <main className="relative flex flex-col h-screen w-full max-sm:px-[5%] px-[15%] py-10 ">
 
@@ -46,7 +29,11 @@ export function StudyGuides() {
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {guides.map((guide, i) => (
+                {((await sql`
+                    select title, description, file_url as "fileUrl"
+                    from study_guides
+                    order by created_at desc
+                `) as unknown as StudyGuide[]).map((guide, i) => (
                     <div
                         key={i}
                         className="flex items-start space-x-4 border border-white/10 hover:border-[#6D2E47] p-6 rounded-md hover:bg-[#6D2E47]/10 transition-all duration-300"
@@ -54,7 +41,9 @@ export function StudyGuides() {
                         <FileText className="w-6 h-6  mt-1" />
                         <div className="flex-1">
                             <h3 className="text-lg font-light tracking-wide">{guide.title}</h3>
-                            <p className="text-sm text-gray-700 mb-2">{guide.description}</p>
+                            {guide.description && (
+                              <p className="text-sm text-gray-700 mb-2">{guide.description}</p>
+                            )}
                             <a
                                 href={guide.fileUrl}
                                 download
