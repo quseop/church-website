@@ -8,7 +8,7 @@ import Link from "next/link";
 export function Resources() {
     const resources = [
         {
-            title: "Study Guides",
+            title: "Study Guides, Notes & Scripts",
             description: "Download guides to help you dive deeper into the Word.",
             icon: <BookOpen className="w-6 h-6" />,
             link: "/resources/guides",
@@ -42,7 +42,7 @@ export function Resources() {
 
     return (
         <section className="relative w-full h-screen max-sm:px-[5%] px-[15%] py-20 max-sm:bg-[#96958C] text-black">
-            <h2 className="text-3xl font-light tracking-widest mb-12">Resources</h2>
+            <h2 className="text-3xl font-light tracking-widest mb-12">More</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {resources.map((res, i) => (

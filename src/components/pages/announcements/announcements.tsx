@@ -1,46 +1,42 @@
-import { Calendar, BookOpen, Users } from "lucide-react";
+import {sql} from "@/server/db";
 
-export function Announcements(){
+export const revalidate = 60
 
-    const events = [
-        // {
-        //     title: "Praise & Worship",
-        //     date: "Friday, 15 August @ 19:30 PM",
-        //     icon: <Calendar className="w-5 h-5" />,
-        // },
-        {
-            title: "Sunday School Outing",
-            date: "August 30th",
-            icon: <Users className="w-5 h-5" />,
-        },
-        {
-            title: "Sunday Service",
-            date: "Every Sunday @10:00am",
-            icon: <Calendar className="w-5 h-5" />,
-        },
-        {
-            title: "Prayer Meeting",
-            date: "Every Wednesday @7:00pm",
-            icon: <BookOpen className="w-5 h-5" />,
-        }
-    ];
+type NewsItem = {
+    id: string
+    title: string
+    content: string
+    author: string
+    date: string
+}
+
+export async function Announcements(){
+
+    const news = (await sql`
+    select id, title, content, author, to_char(date, 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"') as date
+    from news_articles
+    where is_published = true
+    order by date desc
+    limit 10
+  `) as unknown as NewsItem[]
 
     return(
         <section className="h-screen max-sm:bg-[#96958C] w-full px-[15%] max-sm:px-[5%] py-20">
-            <h2 className="text-3xl font-light tracking-widest">Announcements & Events</h2>
+            <h2 className="text-3xl font-light tracking-widest">Latest News & Updates</h2>
             <div className="mt-6 space-y-5">
-                {events.map((event, index) => (
-                    <div
-                        key={index}
-                        className="flex items-center space-x-4 p-4 rounded hover:bg-white/5 transition"
-                    >
-                        <div className="">{event.icon}</div>
-                        <div className="flex flex-col">
-                            <h3 className="text-xl font-light">{event.title}</h3>
-                            <span className=" text-sm">{event.date}</span>
-                        </div>
+                {news.length === 0 ? (
+                    <p className="text-gray-600">No news yet.</p>
+                ) : (
+                    <div className="space-y-4">
+                        {news.map((n) => (
+                            <article key={n.id} className=" pb-4">
+                                <h3 className="text-xl font-light">{n.title}</h3>
+                                <p className="text-sm text-gray-600">By {n.author} • {new Date(n.date).toLocaleDateString()}</p>
+                                <p className="mt-2 text-gray-700 line-clamp-3">{n.content}</p>
+                            </article>
+                        ))}
                     </div>
-                ))}
+                )}
             </div>
             {/*<div className="pt-8">*/}
             {/*    <a*/}

@@ -121,9 +121,6 @@
   }
 }
 
-.font-roboto {
-  font-family: "--font-roboto", serif;
-}
 
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -141,6 +138,10 @@
 /* Add smooth scroll behavior to html */
 html {
   scroll-behavior: smooth;
+}
+
+body{
+  font-family: var(--font-geist-sans), sans-serif;
 }
 
 /* Optional: Add these styles if you want to reduce motion for users who prefer it */

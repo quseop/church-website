@@ -13,7 +13,7 @@ export function Footer() {
                 <Link href="/live" className="hover:underline">Live</Link>
                 <Link href="/announcements" className="hover:underline">Announcements</Link>
                 <Link href="/tithes-offerings" className="hover:underline">Tithes & Offerings</Link>
-                <Link href="/resources" className="hover:underline">Resources</Link>
+                <Link href="/resources" className="hover:underline">More</Link>
                 <Link href="/contact" className="hover:underline">Contact Us</Link>
             </nav>
 

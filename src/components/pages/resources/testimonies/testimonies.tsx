@@ -1,17 +1,15 @@
 import Link from "next/link";
 import {ArrowLeft} from "lucide-react";
 
-type Testimony = {
+type TestimonyItem = {
+    id: string;
     title: string;
     author: string;
-    slug: string;
     preview: string;
     date: string;
 };
 
-const testimonies: Testimony[] = [];
-
-export default function TestimoniesList() {
+export default function TestimoniesList({ items }: { items: TestimonyItem[] }) {
     return (
         <main className="relative py-20 flex flex-col gap-5 max-sm:bg-[#96958C] overflow-hidden no-scrollbar  w-full min-h-screen max-sm:px-[5%] px-[15%] text-[#222]">
 
@@ -30,10 +28,9 @@ export default function TestimoniesList() {
             </p>
 
             <div className="space-y-8">
-                {testimonies.map((post, i) => (
-                    <Link
-                        key={i}
-                        href={`/resources/testimonies/${post.slug}`}
+                {items.map((post) => (
+                    <div
+                        key={post.id}
                         className="block border border-white/10 hover:border-[#6D2E47] p-6 rounded hover:bg-[#6D2E47]/10 transition-all"
                     >
                         <h3 className="text-xl font-light">{post.title}</h3>
@@ -41,11 +38,11 @@ export default function TestimoniesList() {
                             By {post.author} · {post.date}
                         </p>
                         <p className="text-sm ">{post.preview}</p>
-                    </Link>
+                    </div>
                 ))}
-                {
-                    testimonies.length === 0 && <p className="text-black text-lg italic w-full text-center">No testimonies yet.</p>
-                }
+                {items.length === 0 && (
+                    <p className="text-black text-lg italic w-full text-center">No testimonies yet.</p>
+                )}
             </div>
         </main>
     );

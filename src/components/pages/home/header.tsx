@@ -24,7 +24,7 @@ export function Header() {
                 <Link href="/live" className={linkStyle}>Live</Link>
                 <Link href="/announcements" className={linkStyle}>Announcements</Link>
                 <Link href="/tithes-offerings" className={linkStyle}>Tithes & Offerings</Link>
-                <Link href="/resources" className={linkStyle}>Resources</Link>
+                <Link href="/resources" className={linkStyle}>More</Link>
                 <Link
                     href="/contact"
                     className="bg-white text-sm font-medium flex hover:font-bold items-center gap-2 hover:gap-2.5 text-[#333]  rounded-3xl px-5  hover:py-3 py-2 transition-all duration-300"

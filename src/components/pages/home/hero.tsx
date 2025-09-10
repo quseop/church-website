@@ -8,7 +8,7 @@ const dancingScript = Dancing_Script({
 
 export function Hero() {
     return (
-        <main className="flex px-[15%] max-sm:items-center max-sm:px-[5%] text-white flex-col max-sm:justify-evenly w-full bg-gradient-to-r h-[90%]  sm:justify-center gap-10">
+        <main className="flex px-[15%] h-screen max-sm:items-center max-sm:px-[5%] text-white flex-col max-sm:justify-evenly w-full bg-gradient-to-r h-[90%]  sm:justify-center gap-10">
             <div>
                 <p className="text-3xl flex flex-col  font-light leading-15 text-[#dddz] ">
                     <span className={`${dancingScript.className} text-[#6D2E46] max-sm:text-4xl text-5xl`}>Original Seed Ministries.</span>
