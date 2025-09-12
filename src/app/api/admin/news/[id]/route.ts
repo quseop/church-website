@@ -14,6 +14,9 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   const fields = {
     title: body.title as string | undefined,
     content: body.content as string | undefined,
+    summary: (body.summary as string | null | undefined) ?? undefined,
+    body_md: (body.bodyMd as string | null | undefined) ?? undefined,
+    event_items: (body.eventItems ? JSON.stringify(body.eventItems) : null) as string | null | undefined,
     author: body.author as string | undefined,
     image_url: (body.imageUrl as string | null | undefined) ?? undefined,
     is_published: typeof body.isPublished === 'boolean' ? body.isPublished : undefined,
@@ -26,7 +29,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
     if (typeof v !== 'undefined') { sets.push(`${k} = $${i++}`); values.push(v) }
   }
   values.push(id)
-  const text = `update news_articles set ${sets.join(', ')} where id = $${i} returning id, title, content, author, image_url as "imageUrl", is_published as "isPublished", type, date, created_at as "createdAt", updated_at as "updatedAt"`
+  const text = `update news_articles set ${sets.join(', ')} where id = $${i} returning id, title, content, summary, body_md as "bodyMd", event_items as "eventItems", author, image_url as "imageUrl", is_published as "isPublished", type, date, created_at as "createdAt", updated_at as "updatedAt"`
 const [updated] = await (sql as unknown as (q: string, params: unknown[]) => Promise<unknown[]>)(text, values)
   return NextResponse.json(updated)
 }
