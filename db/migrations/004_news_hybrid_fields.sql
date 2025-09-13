@@ -1,0 +1,4 @@
+ALTER TABLE news_articles
+  ADD COLUMN IF NOT EXISTS summary TEXT,
+  ADD COLUMN IF NOT EXISTS body_md TEXT,
+  ADD COLUMN IF NOT EXISTS event_items JSONB;

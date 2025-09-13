@@ -20,8 +20,13 @@ export default function NewsManagement() {
   const [formData, setFormData] = useState({
     title: "",
     content: "",
+    summary: "",
+    bodyMd: "",
+    eventItems: [] as { date: string; startTime: string; venue?: string; note?: string }[],
+    venue: "",
     author: "",
     imageUrl: "",
+    posterUrl: "",
     isPublished: true,
   })
 
@@ -52,7 +57,7 @@ export default function NewsManagement() {
       setIsAddingArticle(false)
     }
 
-    setFormData({ title: "", content: "", author: "", imageUrl: "", isPublished: true })
+    setFormData({ title: "", content: "", summary: "", bodyMd: "", eventItems: [], venue: "", author: "", imageUrl: "", posterUrl: "", isPublished: true })
     try {
       const res = await fetch('/api/admin/news')
       if (!res.ok) {
@@ -71,8 +76,13 @@ export default function NewsManagement() {
     setFormData({
       title: article.title,
       content: article.content,
+      summary: article.summary ?? "",
+      bodyMd: article.bodyMd ?? "",
+      eventItems: (article.eventItems ?? []) as { date: string; startTime: string; venue?: string; note?: string }[],
+      venue: article.venue ?? "",
       author: article.author,
       imageUrl: article.imageUrl || "",
+      posterUrl: article.posterUrl ?? "",
       isPublished: article.isPublished,
     })
     setIsAddingArticle(true)
@@ -113,7 +123,7 @@ export default function NewsManagement() {
   const cancelEdit = () => {
     setIsAddingArticle(false)
     setEditingArticle(null)
-    setFormData({ title: "", content: "", author: "", imageUrl: "", isPublished: true })
+    setFormData({ title: "", content: "", summary: "", bodyMd: "", eventItems: [], venue: "", author: "", imageUrl: "", posterUrl: "", isPublished: true })
   }
 
   return (
@@ -170,13 +180,78 @@ export default function NewsManagement() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="content">Article Content</Label>
+                <Label>Poster Image (optional)</Label>
+                <Input type="text" placeholder="Poster URL" value={formData.posterUrl} onChange={(e) => setFormData({ ...formData, posterUrl: e.target.value })} />
+                <Input type="file" accept="image/*" onChange={async (e) => {
+                  const f = e.target.files?.[0] || null
+                  if (!f) return
+                  const fd = new FormData(); fd.append('file', f)
+                  const up = await fetch('/api/admin/news/upload', { method: 'POST', body: fd })
+                  if (up.ok) {
+                    const { url } = await up.json(); setFormData({ ...formData, posterUrl: url })
+                  } else { alert('Poster upload failed') }
+                }} />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="venue">Common Venue (optional)</Label>
+                <Input id="venue" value={formData.venue} onChange={(e) => setFormData({ ...formData, venue: e.target.value })} placeholder="If most dates share the same venue" />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="summary">Summary (teaser)</Label>
+                <Input
+                  id="summary"
+                  value={formData.summary}
+                  onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
+                  placeholder="Short teaser shown in lists..."
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label>Event Schedule (optional)</Label>
+                <div className="space-y-2">
+                  {formData.eventItems.map((ev, idx) => (
+                    <div key={idx} className="grid grid-cols-1 md:grid-cols-4 gap-2 items-end">
+                      <div>
+                        <Label className="text-xs">Date</Label>
+                        <Input type="date" value={ev.date} onChange={(e) => {
+                          const next = [...formData.eventItems]; next[idx] = { ...next[idx], date: e.target.value }; setFormData({ ...formData, eventItems: next })
+                        }} />
+                      </div>
+                      <div>
+                        <Label className="text-xs">Start Time</Label>
+                        <Input type="time" value={ev.startTime} onChange={(e) => {
+                          const next = [...formData.eventItems]; next[idx] = { ...next[idx], startTime: e.target.value }; setFormData({ ...formData, eventItems: next })
+                        }} />
+                      </div>
+                      <div>
+                        <Label className="text-xs">Venue</Label>
+                        <Input value={ev.venue} onChange={(e) => {
+                          const next = [...formData.eventItems]; next[idx] = { ...next[idx], venue: e.target.value }; setFormData({ ...formData, eventItems: next })
+                        }} />
+                      </div>
+                      <div className="flex gap-2">
+                        <Input placeholder="Note (optional)" value={ev.note || ""} onChange={(e) => {
+                          const next = [...formData.eventItems]; next[idx] = { ...next[idx], note: e.target.value }; setFormData({ ...formData, eventItems: next })
+                        }} />
+                        <Button type="button" variant="outline" onClick={() => {
+                          const next = formData.eventItems.filter((_, i) => i !== idx); setFormData({ ...formData, eventItems: next })
+                        }}>Remove</Button>
+                      </div>
+                    </div>
+                  ))}
+                  <Button type="button" variant="outline" onClick={() => setFormData({ ...formData, eventItems: [...formData.eventItems, { date: "", startTime: "", venue: "" }] })}>Add Event</Button>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="bodyMd">Additional Details (Markdown, optional)</Label>
                 <Textarea
-                  id="content"
-                  value={formData.content}
-                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                  placeholder="Write your article content here..."
-                  required
+                  id="bodyMd"
+                  value={formData.bodyMd}
+                  onChange={(e) => setFormData({ ...formData, bodyMd: e.target.value })}
+                  placeholder="You can use basic markdown here..."
                   rows={8}
                 />
               </div>
@@ -219,7 +294,7 @@ export default function NewsManagement() {
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{article.title}</h3>
-                    <p className="text-gray-600 mb-3 line-clamp-3">{article.content.substring(0, 200)}...</p>
+                    <p className="text-gray-600 mb-3 line-clamp-3">{(article.summary ?? article.content).toString().slice(0, 200)}...</p>
                     <div className="flex items-center space-x-4 text-sm text-gray-500">
                       <span>By {article.author}</span>
                       <span>•</span>
