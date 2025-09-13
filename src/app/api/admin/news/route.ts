@@ -5,7 +5,7 @@ import { authOptions } from "@/server/auth"
 
 export async function GET() {
   const items = await sql`
-    select id, title, content, summary, body_md as "bodyMd", event_items as "eventItems", author, image_url as "imageUrl", is_published as "isPublished", type, date, created_at as "createdAt", updated_at as "updatedAt"
+    select id, title, content, summary, body_md as "bodyMd", event_items as "eventItems", author, image_url as "imageUrl", poster_url as "posterUrl", venue, is_published as "isPublished", type, date, created_at as "createdAt", updated_at as "updatedAt"
     from news_articles
     order by created_at desc
   `
@@ -19,11 +19,11 @@ export async function POST(request: Request) {
     return new NextResponse("Forbidden", { status: 403 })
   }
   const body = await request.json()
-  const { title, content, summary, bodyMd, eventItems, author, imageUrl, isPublished } = body
+  const { title, content, summary, bodyMd, eventItems, author, imageUrl, posterUrl, venue, isPublished } = body
   const [created] = await sql`
-    insert into news_articles (title, content, summary, body_md, event_items, author, image_url, is_published)
-    values (${title}, ${content || ''}, ${summary || null}, ${bodyMd || null}, ${eventItems ? JSON.stringify(eventItems) : null}, ${author}, ${imageUrl || null}, ${!!isPublished})
-    returning id, title, content, summary, body_md as "bodyMd", event_items as "eventItems", author, image_url as "imageUrl", is_published as "isPublished", type, date, created_at as "createdAt", updated_at as "updatedAt"
+    insert into news_articles (title, content, summary, body_md, event_items, author, image_url, poster_url, venue, is_published)
+    values (${title}, ${content || ''}, ${summary || null}, ${bodyMd || null}, ${eventItems ? JSON.stringify(eventItems) : null}, ${author}, ${imageUrl || null}, ${posterUrl || null}, ${venue || null}, ${!!isPublished})
+    returning id, title, content, summary, body_md as "bodyMd", event_items as "eventItems", author, image_url as "imageUrl", poster_url as "posterUrl", venue, is_published as "isPublished", type, date, created_at as "createdAt", updated_at as "updatedAt"
   `
   return NextResponse.json(created)
 }

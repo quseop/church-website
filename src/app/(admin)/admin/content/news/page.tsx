@@ -22,9 +22,11 @@ export default function NewsManagement() {
     content: "",
     summary: "",
     bodyMd: "",
-    eventItems: [] as { date: string; startTime: string; venue: string; note?: string }[],
+    eventItems: [] as { date: string; startTime: string; venue?: string; note?: string }[],
+    venue: "",
     author: "",
     imageUrl: "",
+    posterUrl: "",
     isPublished: true,
   })
 
@@ -55,7 +57,7 @@ export default function NewsManagement() {
       setIsAddingArticle(false)
     }
 
-    setFormData({ title: "", content: "", summary: "", bodyMd: "", eventItems: [], author: "", imageUrl: "", isPublished: true })
+    setFormData({ title: "", content: "", summary: "", bodyMd: "", eventItems: [], venue: "", author: "", imageUrl: "", posterUrl: "", isPublished: true })
     try {
       const res = await fetch('/api/admin/news')
       if (!res.ok) {
@@ -76,9 +78,11 @@ export default function NewsManagement() {
       content: article.content,
       summary: article.summary ?? "",
       bodyMd: article.bodyMd ?? "",
-      eventItems: (article.eventItems ?? []) as { date: string; startTime: string; venue: string; note?: string }[],
+      eventItems: (article.eventItems ?? []) as { date: string; startTime: string; venue?: string; note?: string }[],
+      venue: article.venue ?? "",
       author: article.author,
       imageUrl: article.imageUrl || "",
+      posterUrl: article.posterUrl ?? "",
       isPublished: article.isPublished,
     })
     setIsAddingArticle(true)
@@ -119,7 +123,7 @@ export default function NewsManagement() {
   const cancelEdit = () => {
     setIsAddingArticle(false)
     setEditingArticle(null)
-    setFormData({ title: "", content: "", summary: "", bodyMd: "", eventItems: [], author: "", imageUrl: "", isPublished: true })
+    setFormData({ title: "", content: "", summary: "", bodyMd: "", eventItems: [], venue: "", author: "", imageUrl: "", posterUrl: "", isPublished: true })
   }
 
   return (
@@ -173,6 +177,25 @@ export default function NewsManagement() {
                   onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
                   placeholder="https://example.com/image.jpg"
                 />
+              </div>
+
+              <div className="space-y-2">
+                <Label>Poster Image (optional)</Label>
+                <Input type="text" placeholder="Poster URL" value={formData.posterUrl} onChange={(e) => setFormData({ ...formData, posterUrl: e.target.value })} />
+                <Input type="file" accept="image/*" onChange={async (e) => {
+                  const f = e.target.files?.[0] || null
+                  if (!f) return
+                  const fd = new FormData(); fd.append('file', f)
+                  const up = await fetch('/api/admin/news/upload', { method: 'POST', body: fd })
+                  if (up.ok) {
+                    const { url } = await up.json(); setFormData({ ...formData, posterUrl: url })
+                  } else { alert('Poster upload failed') }
+                }} />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="venue">Common Venue (optional)</Label>
+                <Input id="venue" value={formData.venue} onChange={(e) => setFormData({ ...formData, venue: e.target.value })} placeholder="If most dates share the same venue" />
               </div>
 
               <div className="space-y-2">

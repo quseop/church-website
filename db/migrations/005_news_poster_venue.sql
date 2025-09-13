@@ -1,0 +1,3 @@
+ALTER TABLE news_articles
+  ADD COLUMN IF NOT EXISTS poster_url TEXT,
+  ADD COLUMN IF NOT EXISTS venue TEXT;
